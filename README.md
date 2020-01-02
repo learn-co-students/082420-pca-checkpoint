@@ -1,9 +1,8 @@
-
-## Principal Components Analysis [Suggested Time: 20 minutes]
+# Principal Components Analysis
 
 ### Training a model with PCA-extracted features
 
-In this section, you'll apply the unsupervised learning technique of Principal Components Analysis to the wine dataset. 
+In this challenge, you'll apply the unsupervised learning technique of Principal Components Analysis to the wine dataset. 
 
 You'll use the principal components of the dataset as features in a machine learning model. You'll use the extracted features to train a vanilla Random Forest Classifier, and compare model performance to a model trained without PCA-extracted features. 
 
@@ -24,7 +23,7 @@ y.name = 'class'
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 ```
 
-**3.1) Fit PCA to the training data.** 
+**1) Fit PCA to the training data** 
 
 Call the PCA instance you'll create `wine_pca`. Set `n_components=0.9` and make sure to use `random_state = 42`.
 
@@ -35,14 +34,13 @@ _Hint: Make sure to include necessary imports for **preprocessing the data!**_
 # Your code here 
 ```
 
-**3.2) How many principal components are there in the fitted PCA object?**
+**2) How many principal components are there in the fitted PCA object?**
 
 _Hint: Look at the list of attributes of trained `PCA` objects in the scikit-learn documentation_
 
 
 ```python
-# Replace None with appropriate code 
-print(None)
+# Your code here
 ```
 
 *Hint: you should end up with 8 components.*
@@ -51,12 +49,13 @@ Next, you'll reduce the dimensionality of the training data to the number of com
 
 You'll compare the performance of the model trained on the PCA-extracted features to the performance of a model trained using all features without feature extraction.
 
-**3.3) Transform the training features into an array of reduced dimensionality using the `wine_pca` PCA object you've fit in the previous cell.** Call this array `X_train_pca`.
+**3) Transform the training features into an array of reduced dimensionality using the `wine_pca` PCA object you've fit in the previous cell.**
+
+Call this array `X_train_pca`.
 
 
 ```python
-# Replace None with appropriate code  
-X_train_pca = None
+# Your code here
 ```
 
 Next, we create a dataframe from this array of transformed features and we inspect the first five rows of the dataframe for you. 
@@ -72,16 +71,16 @@ X_train_pca.head()
 
 #### You will now use the PCA-extracted features to train a random forest classification model.
 
-**3.4) Instantiate a vanilla Random Forest Classifier (call it `rfc`) and fit it to the transformed training data.** Set `random_state = 42`. 
+**4) Instantiate a vanilla Random Forest Classifier (call it `rfc`) and fit it to the transformed training data.**
+
+Set `random_state = 42`, and make sure you include the relevant import(s)
 
 
 ```python
-# Replace None with appropriate code 
-rfc = None
-rfc.fit(None, None)
+# Your code here
 ```
 
-**3.5) Evaluate model performance on the test data and place model predictions in a variable called `y_pca_pred`.**
+**5) Evaluate model performance on the test data and place model predictions in a variable called `y_pca_pred`.**
 
 _Hint: Make sure to transform the test data the same way as you transformed the training data!!!_
 
@@ -110,7 +109,7 @@ y_pred = vanilla_rfc.predict(X_test)
 print(classification_report(y_test, y_pred))
 ```
 
-**3.6) Compare model performance. Did the overall accuracy of the model improve when using the transformed features?**
+**6) Compare model performance. Did the overall accuracy of the model improve when using the transformed features?**
 
 
 ```python
