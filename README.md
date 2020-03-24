@@ -71,9 +71,9 @@ X_train_pca.head()
 
 #### You will now use the PCA-extracted features to train a random forest classification model.
 
-**4) Instantiate a vanilla Random Forest Classifier (call it `rfc`) and fit it to the transformed training data.**
+**4) Instantiate a Random Forest Classifier (call it `rfc`) and fit it to the transformed training data.**
 
-Set `random_state = 42`, and make sure you include the relevant import(s)
+Set `n_estimators=10`, `random_state=42`, and make sure you include the relevant import(s).
 
 
 ```python
@@ -101,7 +101,7 @@ Run the cell below to fit a vanilla Random Forest Classifier to the untransforme
 
 
 ```python
-vanilla_rfc = RandomForestClassifier(random_state=42)
+vanilla_rfc = RandomForestClassifier(n_estimators=10, random_state=42)
 vanilla_rfc.fit(X_train, y_train)
 
 y_pred = vanilla_rfc.predict(X_test)
